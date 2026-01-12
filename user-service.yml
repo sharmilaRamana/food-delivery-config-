@@ -2,8 +2,7 @@ server:
   port: 8081
 
 spring:
-
- application:
+  application:
     name: user-service
 
   datasource:
