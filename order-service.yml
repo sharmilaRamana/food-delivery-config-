@@ -37,6 +37,7 @@ eureka:
 logging:
   level:
     org.springframework.kafka: INFO
+    io.github.resilience4j.circuitbreaker: DEBUG
 
 #  CIRCUIT BREAKER CONFIG
 resilience4j:
@@ -53,7 +54,5 @@ resilience4j:
         minimumNumberOfCalls: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
-logging:
-  level:
-    io.github.resilience4j.circuitbreaker: DEBUG
+
 
