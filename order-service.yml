@@ -54,12 +54,16 @@ resilience4j:
         minimumNumberOfCalls: 2
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
-
+        
 management:
   endpoints:
     web:
       exposure:
-        include: health,circuitbreakers
+        include: health,metrics
+  endpoint:
+    health:
+      show-details: always
+
 
 
 
