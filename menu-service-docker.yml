@@ -3,6 +3,17 @@ spring:
     activate:
       on-profile: docker
 
+  datasource:
+    url: jdbc:mysql://mysql:3306/menu_db
+    username: root
+    password: Vinayaga@19
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 server:
   port: 8083
 
