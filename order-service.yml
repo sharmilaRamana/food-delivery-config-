@@ -6,75 +6,75 @@ spring:
   application:
     name: order-service
     
-  datasource:
-    url: jdbc:mysql://localhost:3306/order_db
-    username: root
-    password: Vinayaga@19
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  # datasource:
+  #   url: jdbc:mysql://localhost:3306/order_db
+  #   username: root
+  #   password: Vinayaga@19
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  # jpa:
+  #   hibernate:
+  #     ddl-auto: update
+  #   show-sql: true
 
-  kafka:
-    bootstrap-servers: localhost:9092
+#   kafka:
+#     bootstrap-servers: localhost:9092
 
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#     producer:
+#       key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
-    consumer:
-      group-id: order-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
-        spring.json.value.default.type: com.foodapp.orderservice.dto.OrderEvent
+#     consumer:
+#       group-id: order-group
+#       auto-offset-reset: earliest
+#       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#       properties:
+#         spring.json.trusted.packages: "*"
+#         spring.json.value.default.type: com.foodapp.orderservice.dto.OrderEvent
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka
 
-logging:
-  level:
-    org.springframework.kafka: INFO
-    io.github.resilience4j.circuitbreaker: DEBUG
+# logging:
+#   level:
+#     org.springframework.kafka: INFO
+#     io.github.resilience4j.circuitbreaker: DEBUG
 
-#  CIRCUIT BREAKER CONFIG
-resilience4j:
-  circuitbreaker:
-    instances:
-      userService:
-        slidingWindowSize: 2
-        minimumNumberOfCalls: 2
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
+# #  CIRCUIT BREAKER CONFIG
+# resilience4j:
+#   circuitbreaker:
+#     instances:
+#       userService:
+#         slidingWindowSize: 2
+#         minimumNumberOfCalls: 2
+#         failureRateThreshold: 50
+#         waitDurationInOpenState: 10s
 
-      menuService:
-        slidingWindowSize: 2
-        minimumNumberOfCalls: 2
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
+#       menuService:
+#         slidingWindowSize: 2
+#         minimumNumberOfCalls: 2
+#         failureRateThreshold: 50
+#         waitDurationInOpenState: 10s
         
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics
-  endpoint:
-    health:
-      show-details: always
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: health,metrics
+#   endpoint:
+#     health:
+#       show-details: always
       
-  tracing:
-    sampling:
-      probability: 1.0
+#   tracing:
+#     sampling:
+#       probability: 1.0
 
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+#   zipkin:
+#     tracing:
+#       endpoint: http://localhost:9411/api/v2/spans
 
 
 
