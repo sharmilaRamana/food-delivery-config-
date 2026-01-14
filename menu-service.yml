@@ -6,25 +6,25 @@ spring:
   application:
     name: menu-service
 
-  datasource:
-    url: jdbc:mysql://localhost:3306/menu_db
-    username: root
-    password: Vinayaga@19
+#   datasource:
+#     url: jdbc:mysql://localhost:3306/menu_db
+#     username: root
+#     password: Vinayaga@19
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     show-sql: true
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka
 
-management:
-  tracing:
-    sampling:
-      probability: 1.0
+# management:
+#   tracing:
+#     sampling:
+#       probability: 1.0
 
   zipkin:
     tracing:
