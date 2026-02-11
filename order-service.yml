@@ -59,22 +59,22 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 10s
         
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics
-  endpoint:
-    health:
-      show-details: always
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: health,metrics
+#   endpoint:
+#     health:
+#       show-details: always
       
-  tracing:
-    sampling:
-      probability: 1.0
+#   tracing:
+#     sampling:
+#       probability: 1.0
 
-  zipkin:
-    tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+#   zipkin:
+#     tracing:
+#       endpoint: http://localhost:9411/api/v2/spans
 
 
 
